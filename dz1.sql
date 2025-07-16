@@ -5,7 +5,7 @@ use Academy;
 create table Groups(
     [Id] int not null primary key identity(1, 1),
     [Name] nvarchar(10) not null CHECK (name <> '') unique,
-    [Rating] int not null CHECK([Year]>=0 and [Year]<=5),
+    [Rating] int not null CHECK([Rating]>=0 and [Rating]<=5),
     [Year] int not null CHECK([Year]>=1 and [Year]<5)
 );
 
