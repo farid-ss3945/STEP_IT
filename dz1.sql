@@ -24,8 +24,8 @@ create table Faculties(
 create table Teachers(
     [Id] int not null primary key identity(1, 1),
     [EmploymentDate] date not null CHECK(Year([EmploymentDate])>=1990),
-    [Name] nvarchar(max) not null CHECK (name <> ''),
+    [Name] nvarchar(max) not null CHECK (Name <> ''),
     [Premium] money not null CHECK([Premium]>=0) default(0),
     [Salary] money not null CHECK([Salary]>0),
-    [Surname] nvarchar(max) not null CHECK (name <> '')
+    [Surname] nvarchar(max) not null CHECK (Surname <> '')
 )
