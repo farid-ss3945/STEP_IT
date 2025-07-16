@@ -5,14 +5,15 @@ use Academy;
 create table Groups(
     [Id] int not null primary key identity(1, 1),
     [Name] nvarchar(10) not null CHECK (name <> '') unique,
-    [Rating] int not null check([Year]>=0 and [Year]<=5),
-    [Year] int not null check([Year]>=1 and [Year]<5)
+    [Rating] int not null CHECK([Year]>=0 and [Year]<=5),
+    [Year] int not null CHECK([Year]>=1 and [Year]<5)
 );
 
 create table Departments(
     [Id] int not null primary key identity(1, 1),
     [Name] nvarchar(100) not null CHECK (name <> '') unique,
-    [Rating] int not null check([Rating]>=0) default(0)
+    [Rating] int not null CHECK([Rating]>=0) default(0),
+    [Financing] money not null CHECK([Financing]>=0) default(0)
 )
 
 create table Faculties(
